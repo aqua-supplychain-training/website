@@ -2,7 +2,7 @@ name: all-in-one
 on:
   push:
     branches:
-      - example
+      - main
 jobs:
   fs-scan:
     runs-on: ubuntu-latest
@@ -74,7 +74,7 @@ jobs:
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
           trivy-config: trivy.yaml
-          #test
+          
       - 
         name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
